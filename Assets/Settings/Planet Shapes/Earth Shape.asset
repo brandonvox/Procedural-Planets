@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Earth Shape
   m_EditorClassIdentifier: 
   planetRadius: 3.58
-  oceanRadiusOffset: 0.0047
+  oceanRadiusOffset: 0
+  depthMultiplier: 1230.5
   noiseLayers:
   - enable: 1
     useFirstLayerAsMask: 1
@@ -23,7 +24,7 @@ MonoBehaviour:
       baseLacunarity: 1
       lacunarity: 2
       persistence: 0.5
-      strength: 0.11
+      strength: 0.04
       minValue: 0.95
       center: {x: -0.21, y: 0, z: 0}
   - enable: 1

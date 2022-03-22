@@ -7,7 +7,8 @@ public class ShapeSettings : ScriptableObject
 {
     public float planetRadius = 1;
     [Range(-0.1f, 0.1f)] 
-    public float oceanRadiusOffset = 0f; 
+    public float oceanRadiusOffset = 0f;
+    public float depthMultiplier = 1f; 
     public NoiseLayer[] noiseLayers; 
 
     [System.Serializable]   
