@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799a6e8afad013b4790545ee6be6d11f, type: 3}
   m_Name: Earth Shape
   m_EditorClassIdentifier: 
-  planetRadius: 1
+  planetRadius: 3.58
+  oceanRadiusOffset: 0.0047
   noiseLayers:
   - enable: 1
     useFirstLayerAsMask: 1

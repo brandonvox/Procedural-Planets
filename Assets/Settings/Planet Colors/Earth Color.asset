@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Earth Color
   m_EditorClassIdentifier: 
   terrainMaterial: {fileID: 2100000, guid: 0a2a3cb03ae0e374f96638ccc4fc390d, type: 2}
-  oceanMaterial: {fileID: 2100000, guid: 4c79196e637b797488e21c61187e74c2, type: 2}
+  oceanMaterial: {fileID: 2100000, guid: db70cfaca83313745935ca7cdd2a804e, type: 2}
   planetGradient:
     serializedVersion: 2
     key0: {r: 0.3490566, g: 0.29197815, b: 0.29197815, a: 1}

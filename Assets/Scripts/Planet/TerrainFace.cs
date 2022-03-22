@@ -43,7 +43,8 @@ public class TerrainFace
                 float unscaledElevation = shapeGenerator.CalculateUnscaledElevation(pointOnUnitSphere);
                 float scaledElevation = shapeGenerator.GetScaledElevation(unscaledElevation);
                 terrainVertices[i] =  pointOnUnitSphere * scaledElevation;
-                oceanVertices[i] = pointOnUnitSphere * shapeGenerator.shapeSettings.planetRadius; 
+                oceanVertices[i] = pointOnUnitSphere * shapeGenerator.shapeSettings.planetRadius *
+                    (1 + shapeGenerator.shapeSettings.oceanRadiusOffset); 
                 // add to UV chanel
                 uv[i].x = unscaledElevation;
 
