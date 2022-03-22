@@ -43,5 +43,5 @@ Material:
     - Color_77f78d128ffa431487fa082a3413a7fe: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_99cbe070f0104e4f99ee350a6205c417: {r: 0, g: 0, b: 0, a: 0}
     - _color: {r: 1, g: 0, b: 0.036593437, a: 0}
-    - _elevationMinMax: {r: -0.14807722, g: 0.17779127, b: 0, a: 0}
+    - _elevationMinMax: {r: -0.15264322, g: 0.17737947, b: 0, a: 0}
   m_BuildTextureStacks: []
