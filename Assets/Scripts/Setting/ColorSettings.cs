@@ -6,7 +6,8 @@ using UnityEngine;
 public class ColorSettings : ScriptableObject
 {
     [SerializeField]
-    public Material planetMaterial;
+    public Material terrainMaterial;
+    public Material oceanMaterial;
     public Gradient planetGradient;
     public Gradient oceanGradient;
     [Range(10, 200)]

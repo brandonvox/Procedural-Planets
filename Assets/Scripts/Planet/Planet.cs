@@ -20,37 +20,46 @@ public class Planet : MonoBehaviour
     ColorGenerator colorGenerator = new ColorGenerator();
 
     [SerializeField, HideInInspector]
-    MeshFilter[] meshFilters;
-    PlanetSide[] terrainFaces;
+    MeshFilter[] terrainMeshFilters;
+    MeshFilter[] oceanMeshFilters;
+    TerrainFace[] terrainFaces;
 
 
     void Initialize()
     {
         shapeGenerator.HandleShapeSettingsUpdated(shapeSettings); 
         colorGenerator.HandleColorSettingsUpdated(colorSettings); 
-        if (meshFilters == null || meshFilters.Length == 0)
+        if (terrainMeshFilters == null || terrainMeshFilters.Length == 0 
+            || oceanMeshFilters == null || oceanMeshFilters.Length ==0)
         {
-            meshFilters = new MeshFilter[6];
+            terrainMeshFilters = new MeshFilter[6];
+            oceanMeshFilters = new MeshFilter[6];
         }
-        terrainFaces = new PlanetSide[6];
-
+        terrainFaces = new TerrainFace[6];
         Vector3[] directions = { Vector3.up, Vector3.down, Vector3.left, Vector3.right, Vector3.forward, Vector3.back };
 
         for (int i = 0; i < 6; i++)
         {
-            if (meshFilters[i] == null)
+            if (terrainMeshFilters[i] == null || oceanMeshFilters[i] == null)
             {
-                GameObject meshObj = new GameObject("mesh");
-                meshObj.transform.parent = transform;
+                GameObject terrainFaceObject = new GameObject("Terrain " + i);
+                terrainFaceObject.transform.parent = transform;
+                terrainFaceObject.AddComponent<MeshRenderer>();
+                terrainMeshFilters[i] = terrainFaceObject.AddComponent<MeshFilter>();
+                terrainMeshFilters[i].sharedMesh = new Mesh();
 
-                meshObj.AddComponent<MeshRenderer>(); 
-                meshFilters[i] = meshObj.AddComponent<MeshFilter>();
-                meshFilters[i].sharedMesh = new Mesh();
+                GameObject oceanFaceObject = new GameObject("Ocean " + i);
+                oceanFaceObject.transform.parent = transform;
+                oceanFaceObject.AddComponent<MeshRenderer>();
+                oceanMeshFilters[i] = oceanFaceObject.AddComponent<MeshFilter>();
+                oceanMeshFilters[i].sharedMesh = new Mesh(); 
             }
 
-            meshFilters[i]. GetComponent<MeshRenderer> ().sharedMaterial = colorSettings.planetMaterial; 
+            terrainMeshFilters[i]. GetComponent<MeshRenderer> ().sharedMaterial = colorSettings.terrainMaterial;
+            oceanMeshFilters[i].GetComponent<MeshRenderer>().sharedMaterial = colorSettings.oceanMaterial;
 
-            terrainFaces[i] = new PlanetSide(shapeGenerator, meshFilters[i].sharedMesh, resolution, directions[i]);
+            terrainFaces[i] = new TerrainFace(shapeGenerator, terrainMeshFilters[i].sharedMesh,
+                oceanMeshFilters[i].sharedMesh, resolution, directions[i]);
         }
     }
 
@@ -83,7 +92,7 @@ public class Planet : MonoBehaviour
 
     void GenerateMesh()
     {
-        foreach (PlanetSide face in terrainFaces)
+        foreach (TerrainFace face in terrainFaces)
         {
             face.ConstructMesh();
         }

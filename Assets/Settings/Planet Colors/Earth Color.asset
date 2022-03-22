@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6b05647fac85b498ddbdb42f5a9a34, type: 3}
   m_Name: Earth Color
   m_EditorClassIdentifier: 
-  planetMaterial: {fileID: 2100000, guid: 0a2a3cb03ae0e374f96638ccc4fc390d, type: 2}
+  terrainMaterial: {fileID: 2100000, guid: 0a2a3cb03ae0e374f96638ccc4fc390d, type: 2}
+  oceanMaterial: {fileID: 2100000, guid: 4c79196e637b797488e21c61187e74c2, type: 2}
   planetGradient:
     serializedVersion: 2
-    key0: {r: 0.4245283, g: 0.421507, b: 0.41918832, a: 1}
+    key0: {r: 0.3490566, g: 0.29197815, b: 0.29197815, a: 1}
     key1: {r: 0.8867924, g: 0.8848752, b: 0.0055772006, a: 1}
     key2: {r: 0.43178535, g: 0.990566, b: 0, a: 0}
     key3: {r: 0.4606457, g: 0.7830189, b: 0.019698527, a: 0}

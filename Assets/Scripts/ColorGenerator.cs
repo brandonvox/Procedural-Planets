@@ -18,7 +18,7 @@ public class ColorGenerator
 
     public void UpdateElevationMinMaxPropertyInPlanetMaterial(ElevationMinMax elevationMinMax)
     {
-        colorSettings.planetMaterial
+        colorSettings.terrainMaterial
             .SetVector("_elevationMinMax", new Vector4(elevationMinMax.Min, elevationMinMax.Max));
     }
 
@@ -36,6 +36,6 @@ public class ColorGenerator
 
         texture2D.SetPixels(colors);
         texture2D.Apply();
-        colorSettings.planetMaterial.SetTexture("_texture2D", texture2D);
+        colorSettings.terrainMaterial.SetTexture("_texture2D", texture2D);
     }
 }
